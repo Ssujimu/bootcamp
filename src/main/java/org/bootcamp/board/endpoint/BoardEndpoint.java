@@ -4,6 +4,7 @@ import org.bootcamp.board.aggregate.Board;
 import org.bootcamp.board.aggregate.vo.BoardType;
 import org.bootcamp.board.command.BoardCreate;
 import org.bootcamp.board.command.BoardDelete;
+import org.bootcamp.board.command.BoardUpdate;
 import org.bootcamp.board.query.QueryBoardByBoardType;
 import org.bootcamp.board.service.BoardService;
 import org.springframework.web.bind.annotation.*;
@@ -58,6 +59,12 @@ public class BoardEndpoint {
     public List<Board> findBoardsList() {
         //
         return this.boardService.findBoardList();
+    }
+
+    @PutMapping("/{boardId}")
+    public void update(BoardUpdate command) {
+        //
+        this.boardService.update(command);
     }
 
     // 왜 @GetMapping("/{boardType}") 안씀?
