@@ -64,4 +64,5 @@ public class BoardStore {
         //
         this.boardRepository.deleteById(id);
     }
+
 }

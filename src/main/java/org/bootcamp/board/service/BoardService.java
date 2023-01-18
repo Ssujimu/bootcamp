@@ -41,10 +41,17 @@ public class BoardService {
         this.boardStore.update(board);
     }
 
+    //조회를 하면 조회수가 1이 늘어남
+
     public Board findBoardByBoardId(String boardId) {
         //
-        return this.boardStore.query(boardId);
+        Board board = this.boardStore.query(boardId);
+        board.setSequence(board.getSequence()+1);
+        this.boardStore.update(board);
+
+        return board;
     }
+
 
     public List<Board> findBoardList() {
         //

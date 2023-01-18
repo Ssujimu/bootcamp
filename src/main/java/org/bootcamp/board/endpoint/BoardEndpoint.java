@@ -62,10 +62,17 @@ public class BoardEndpoint {
     }
 
     @PutMapping("/{boardId}")
-    public void update(BoardUpdate command) {
+    public void update(@PathVariable String boardId, @RequestBody BoardUpdate command) {
         //
+        command.setBoardId(boardId);
         this.boardService.update(command);
     }
+
+//    @PutMapping
+//    public void updateSequence() {
+//        //
+//
+//    }
 
     // 왜 @GetMapping("/{boardType}") 안씀?
     // 위에 GetMapping이랑 겹쳐서 그럼 ("/{boardId}/{boardType}") 이렇게 하면 안댐?
