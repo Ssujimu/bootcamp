@@ -42,7 +42,6 @@ public class BoardService {
     }
 
     //조회를 하면 조회수가 1이 늘어남
-
     public Board findBoardByBoardId(String boardId) {
         //
         Board board = this.boardStore.query(boardId);

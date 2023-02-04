@@ -7,7 +7,7 @@ import lombok.Setter;
 import org.bootcamp.util.IdName;
 
 // vo = 특정 값을 나타내는 객체 -> vo에는 로직 o
-// dto = 데이터 교환을 위한 객체 -> dto에는 로직 x
+// dto = 데이터 교환을 위한 객체 -> dto에는 로직 x command를 dto라고 봐도 될까나..
 @Getter
 @Setter
 @NoArgsConstructor

@@ -32,7 +32,7 @@ public class BoardStore {
         //
         Optional<BoardDoc> doc = this.boardRepository.findById(boardId);
 
-        if (doc.isPresent()) {
+        if (doc.isEmpty()) {
             throw new NoSuchElementException();
         }
 
