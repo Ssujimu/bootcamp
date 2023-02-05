@@ -20,7 +20,7 @@ public class UserService {
         this.userStore.create(user);
     }
 
-    public User query(String id) {
-        return this.userStore.query(id);
+    public User query(String id, String pw) {
+        return this.userStore.query(id, pw);
     }
 }

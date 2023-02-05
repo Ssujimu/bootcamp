@@ -23,8 +23,8 @@ public class UserEndpoint {
     }
 
     @GetMapping("/{id}")
-    public User query(@PathVariable String id) {
-        //
-        return this.userService.query(id);
+    public User query(@PathVariable String id, @RequestParam String pw) {
+        // 로그인 시 id와 pw 확인
+        return this.userService.query(id, pw);
     }
 }
